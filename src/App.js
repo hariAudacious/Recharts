@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import LineCharts from "./components/LineChart";
+import TwoLineChart from "./components/Two-Line-Chart";
+import AreaCharts from "./components/Area-Chart"
+import BarCharts from "./components/Bar-Chart"
+import StackedBars from "./components/Stacked-Bar-Chart"
+import PieCharts from "./components/Pie-Chart";
+import NavBar from "./components/Navbar";
+import {Routes,Route} from "react-router-dom";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return(
+    <>
+    <NavBar/> 
+    <Routes>
+        <Route path="/" element={<LineCharts/>}/>
+        <Route path="/twolinechart" element={<TwoLineChart/>}/>
+        <Route path="/areacharts" element={<AreaCharts/>}/>
+        <Route path="/barcharts" element={<BarCharts/>}/>
+        <Route path="/stackedBars" element={<StackedBars/>}/>
+        <Route path="/piecharts" element={<PieCharts/>}/>
+    </Routes>
+    </>
   );
 }
 
